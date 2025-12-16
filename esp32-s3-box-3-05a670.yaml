@@ -72,6 +72,8 @@ substitutions:
   idle_page_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/idle_page_button320.jpg
   light_on_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_on_64.png
   light_off_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_off_64.png
+  fan_on_file: https://raw.githubusercontent.com/Timeteo/esphome/bf661d7f38e415e176c97d8d3fb7a248221e5394/resources/image/ceiling_fan_on_64.png
+  fan_off_file: https://raw.githubusercontent.com/Timeteo/esphome/d95e4263887bd29e532ea133d78c9ee7d3178baa/resources/image/ceiling_fan_off_64.png
   
   loading_illustration_background_color: "000000"
   idle_illustration_background_color: "000000"
@@ -1015,6 +1017,14 @@ image:
     id: light_off_image
     resize: 64x64
     type: RGB
+  - file: ${fan_on_file}
+    id: fan_on_image
+    resize: 64x64
+    type: RGB
+  - file: ${fan_off_file}
+    id: fan_off_image
+    resize: 64x64
+    type: RGB
 
 font:
   - file:
@@ -1927,7 +1937,7 @@ display:
           it.fill(id(idle_color));
           const char *days[] {"${sunday}","${monday}","${tuesday}","${wednesday}","${thursday}","${friday}","${saturday}"};
           const char *months[] {"${jan}","${feb}","${mar}","${apr}","${may}","${jun}","${jul}","${aug}","${sept}","${oct}","${nov}","${dec}"};
-          it.printf(160, 28, id(font_date), light_blue, TextAlign::CENTER, "%s %d %s", days[id(ha_time).now().day_of_week - 1], id(ha_time).now().day_of_month, months[id(ha_time).now().month - 1]);
+          it.printf(160, 40, id(font_date), light_blue, TextAlign::CENTER, "%s %d %s", days[id(ha_time).now().day_of_week - 1], id(ha_time).now().day_of_month, months[id(ha_time).now().month - 1]);
           it.strftime(160, 110, id(font_saver_time), TextAlign::CENTER, "%l:%M%p", id(ha_time).now());
 
           // Display temp sensor value (center)
@@ -1975,9 +1985,9 @@ display:
           
           //  Fan 1 bottom-right
           if (id(fan1_state).state) {
-            it.image(col2_x, row2_y, id(light_on_image), ImageAlign::CENTER);
+            it.image(col2_x, row2_y, id(fan_on_image), ImageAlign::CENTER);
           } else {
-            it.image(col2_x, row2_y, id(light_off_image), ImageAlign::CENTER);
+            it.image(col2_x, row2_y, id(fan_off_image), ImageAlign::CENTER);
           }
           it.printf(col2_x, row2_y + icon_size/2 + 10, id(font_request), Color::BLACK, TextAlign::CENTER, "Ceiling Fan");
           id(draw_timer_timeline).execute();
