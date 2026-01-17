@@ -13,7 +13,7 @@
 ---
 substitutions:
   #Firmware version
-  firmware_ver: "1.7.0"
+  firmware_ver: "1.7.1"
   ## HA entities list:
   ##lights
   light1: "light.office_light"
@@ -1020,11 +1020,11 @@ image:
   - file: ${fan_on_file}
     id: fan_on_image
     resize: 64x64
-    type: RGB
+    type: RGBA
   - file: ${fan_off_file}
     id: fan_off_image
     resize: 64x64
-    type: RGB
+    type: RGBA
 
 font:
   - file:
