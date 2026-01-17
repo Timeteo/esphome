@@ -1950,14 +1950,14 @@ display:
       - id: lights_page
         lambda: |-
           it.fill(id(white));
-          it.printf((it.get_width()/2), 25, id(font_status), Color::BLACK, TextAlign::CENTER,"Light Control");
+          it.printf((it.get_width()/2), 20, id(font_status), Color::BLACK, TextAlign::CENTER,"Light Control");
 
           // Layout parameters
           const int icon_size = 64;
           const int col1_x = 80;   // left column center
           const int col2_x = 240;  // right column center
-          const int row1_y = 90;   // first row center
-          const int row2_y = 190;  // second row center
+          const int row1_y = 85;   // first row center
+          const int row2_y = 178;  // second row center
 
           //  Light 1 - top-left
           if (id(light1_state).state) {
