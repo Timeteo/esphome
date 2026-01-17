@@ -72,8 +72,8 @@ substitutions:
   idle_page_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/idle_page_button320.jpg
   light_on_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_on_64.png
   light_off_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_off_64.png
-  fan_on_file: resources/image/ceiling_fan_on_64_transparent.png
-  fan_off_file: resources/image/ceiling_fan_off_64_transparent.png
+  fan_on_file: resources/image/ceiling_fan_on_64.png
+  fan_off_file: resources/image/ceiling_fan_off_64.png
   
   loading_illustration_background_color: "000000"
   idle_illustration_background_color: "000000"
@@ -1021,12 +1021,10 @@ image:
     id: fan_on_image
     resize: 64x64
     type: RGB
-    transparency: alpha_channel
   - file: ${fan_off_file}
     id: fan_off_image
     resize: 64x64
     type: RGB
-    transparency: alpha_channel
 
 font:
   - file:
