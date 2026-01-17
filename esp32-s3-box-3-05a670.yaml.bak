@@ -508,10 +508,10 @@ script:
                                 id(s3_box_lcd).update();
                                 break;
                               default:
-                                // Only switch to saver page if not adjusting volume locally
+                                // Only switch to idle page if not adjusting volume locally
                                 if (!id(local_volume_adjusting)) {
-                                    id(s3_box_lcd).show_page(saver_page);
-                                    ESP_LOGD("main", "API connected - page redrawn to saver");
+                                    id(s3_box_lcd).show_page(idle_page);
+                                    ESP_LOGD("main", "API connected - page redrawn to idle");
                                 } else {
                                     ESP_LOGD("main", "Local volume adjusting - stay on setting page");
                                 }
@@ -1057,7 +1057,7 @@ font:
   - file:
       type: gfonts
       family: ${font_family}
-      weight: 700
+      weight: 400
     id: font_date
     size: 30
     glyphsets:
@@ -1937,7 +1937,7 @@ display:
           it.fill(id(idle_color));
           const char *days[] {"${sunday}","${monday}","${tuesday}","${wednesday}","${thursday}","${friday}","${saturday}"};
           const char *months[] {"${jan}","${feb}","${mar}","${apr}","${may}","${jun}","${jul}","${aug}","${sept}","${oct}","${nov}","${dec}"};
-          it.printf(160, 40, id(font_date), white, TextAlign::CENTER, "%s %d %s", days[id(ha_time).now().day_of_week - 1], id(ha_time).now().day_of_month, months[id(ha_time).now().month - 1]);
+          it.printf(160, 40, id(font_date), light_blue, TextAlign::CENTER, "%s %d %s", days[id(ha_time).now().day_of_week - 1], id(ha_time).now().day_of_month, months[id(ha_time).now().month - 1]);
           it.strftime(160, 110, id(font_saver_time), TextAlign::CENTER, "%l:%M%p", id(ha_time).now());
 
           // Display temp sensor value (center)
