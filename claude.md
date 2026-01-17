@@ -9,6 +9,7 @@ At the start of each session, validate the environment:
 ## Git Safety Rules (CRITICAL)
 - **Always create a new branch before making any changes** - never commit directly to `main`
 - Branch naming: `feature/<description>` or `fix/<description>`
+- **Never commit without explicit user approval** - verify with user before committing
 - **Never push without explicit user approval** - ask first, push only after confirmation
 - After changes are verified working, the user will merge manually
 
@@ -35,11 +36,30 @@ At the start of each session, validate the environment:
 3. Read the relevant section of the YAML before editing
 4. Increment `firmware_ver` in substitutions when making functional changes
 
+## Development Workflow
+The standard development cycle follows this pattern:
+1. **Change** - Make modifications to configuration files
+2. **Deploy** - Test changes on the device
+3. **Iterate** - Repeat change -> deploy as many times as needed
+4. **Commit** - Only after changes are verified and user approves
+
+### Deploy Command
+```bash
+esphome upload esp32-s3-box-3-05a670.yaml --device /dev/cu.usbmodem101
+```
+
+**Important Notes:**
+- Multiple change -> deploy iterations are expected before committing
+- Deploy and test changes thoroughly before requesting commit approval
+- User will verify commits before they are made
+- All build output, warnings, and errors are captured for troubleshooting
+
 ## Testing & Deployment
-- Build and deploy command: `esphome run <config-file>.yaml --device <device-path>`
-- Example: `esphome run esp32-s3-box-3-05a670.yaml --device /dev/cu.usbmodem101`
+- Build and deploy command: `esphome upload <config-file>.yaml --device <device-path>`
+- Example: `esphome upload esp32-s3-box-3-05a670.yaml --device /dev/cu.usbmodem101`
 - **Automatically troubleshoot any compilation or deployment errors**
 - **May install/update dependencies as needed** to resolve issues
+- **Help resolve deprecation warnings** that appear during compilation
 
 ### Device Path Validation
 - **Validate device path once per session** (not every execution)
