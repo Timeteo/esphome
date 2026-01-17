@@ -60,18 +60,18 @@ substitutions:
   bright_bar_y1: 72
   bright_bar_h: 130
 
-  loading_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/loading_320_240.png
-  idle_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/idle_320_240.png
-  #listening_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/listening_320_240.png
-  listening_illustration_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/breathing_listening2_320.gif
-  thinking_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/thinking_320_240.png
-  replying_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/replying_320_240.png
-  error_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/error_320_240.png
-  timer_finished_illustration_file: https://github.com/esphome/wake-word-voice-assistants/raw/main/casita/timer_finished_320_240.png
+  loading_illustration_file: resources/image/loading_320_240.png
+  idle_illustration_file: resources/image/idle_320_240.png
+  #listening_illustration_file: resources/image/listening_320_240.png
+  listening_illustration_file: resources/image/breathing_listening2_320.gif
+  thinking_illustration_file: resources/image/thinking_320_240.png
+  replying_illustration_file: resources/image/replying_320_240.png
+  error_illustration_file: resources/image/error_320_240.png
+  timer_finished_illustration_file: resources/image/timer_finished_320_240.png
   ##Below added to show 4 icons on idle page and lights page.
-  idle_page_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/idle_page_button320.jpg
-  light_on_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_on_64.png
-  light_off_file: https://raw.githubusercontent.com/chickymonkey/esphome/ceb4b22c604abc93c7b93dba7ec3510f9462e740/image/light_off_64.png
+  idle_page_file: resources/image/idle_page_button320.jpg
+  light_on_file: resources/image/light_on_64.png
+  light_off_file: resources/image/light_off_64.png
   fan_on_file: resources/image/ceiling_fan_on_64.png
   fan_off_file: resources/image/ceiling_fan_off_64.png
   
@@ -995,12 +995,12 @@ image:
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: https://github.com/esphome/wake-word-voice-assistants/raw/main/error_box_illustrations/error-no-wifi.png
+  - file: resources/image/error_no_wifi.png
     id: error_no_wifi
     resize: 320x240
     type: RGB
     transparency: alpha_channel
-  - file: https://github.com/esphome/wake-word-voice-assistants/raw/main/error_box_illustrations/error-no-ha.png
+  - file: resources/image/error_no_ha.png
     id: error_no_ha
     resize: 320x240
     type: RGB
