@@ -1020,11 +1020,13 @@ image:
   - file: ${fan_on_file}
     id: fan_on_image
     resize: 64x64
-    type: RGBA
+    type: RGB
+    transparency: alpha_channel
   - file: ${fan_off_file}
     id: fan_off_image
     resize: 64x64
-    type: RGBA
+    type: RGB
+    transparency: alpha_channel
 
 font:
   - file:
